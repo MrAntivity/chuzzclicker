@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chuzz Clicker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-aurora" aria-hidden="true"></div>
+    <header class="top-bar">
+      <div class="logo">Chuzz Clicker</div>
+      <div class="stats">
+        <div class="stat">
+          <span class="label">Total Chuzz</span>
+          <span class="value" id="totalChuzz">0</span>
+        </div>
+        <div class="stat">
+          <span class="label">Chuzz / Click</span>
+          <span class="value" id="chuzzPerClick">1</span>
+        </div>
+        <div class="stat">
+          <span class="label">Combo</span>
+          <span class="value" id="combo">0x</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="play-area">
+      <section class="left-panel">
+        <h1 class="tagline">Double the faces, double the chaos.</h1>
+        <p class="subtext">
+          Click the Chuzz twins, trigger ridiculous power-ups, and hunt for hidden
+          secrets. Every 100 clicks unlocks lore, and every easter egg you find
+          makes the Chuzz dimension a little weirder.
+        </p>
+
+        <div class="achievement-feed" id="achievementFeed" aria-live="polite"></div>
+
+        <section class="lore-box">
+          <h2>Legend of the Chuzz</h2>
+          <p id="loreText">The Chuzz multiverse stirs... click to reveal its whispers.</p>
+        </section>
+
+        <section class="powerup-timeline">
+          <h2>Recent Madness</h2>
+          <ul id="eventFeed"></ul>
+        </section>
+      </section>
+
+      <section class="click-zone">
+        <button class="chuzz-button" id="chuzzOne" aria-label="Click SMALL D CHUZZ">
+          <span class="title">SMALL D CHUZZ</span>
+        </button>
+        <button class="chuzz-button" id="chuzzTwo" aria-label="Click FAT CHUZZ">
+          <span class="title">FAT CHUZZ</span>
+        </button>
+        <div class="powerup-container" id="powerupContainer" aria-live="assertive"></div>
+      </section>
+
+      <aside class="right-panel">
+        <section class="upgrades">
+          <h2>Upgrades & Shenanigans</h2>
+          <ul id="upgradeList"></ul>
+        </section>
+
+        <section class="mystery-panel" id="mysteryPanel">
+          <h2>???</h2>
+          <p>Something is humming beneath the UI...</p>
+        </section>
+
+        <section class="chuzz-facts">
+          <h2>Chuzz Facts</h2>
+          <p id="factText">Click a Chuzz to roll a fact.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Hidden tip: Tap the title 7 times, or type "ultimate". The Chuzz knows
+        when you're looking.
+      </p>
+    </footer>
+
+    <template id="upgradeTemplate">
+      <li class="upgrade">
+        <div class="upgrade-info">
+          <h3 class="upgrade-name"></h3>
+          <p class="upgrade-description"></p>
+        </div>
+        <button class="upgrade-buy">Unlock</button>
+      </li>
+    </template>
+
+    <template id="eventTemplate">
+      <li class="event-item">
+        <span class="event-time"></span>
+        <span class="event-message"></span>
+      </li>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" integrity="sha384-LTDzI6FEMDsicFZ+fpXKZpTwx6hS+tXmRgVgJ5BZ85DX07CnYmIVbr2AjYvv9ely" crossorigin="anonymous"></script>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
